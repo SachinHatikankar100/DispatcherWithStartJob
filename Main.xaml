@@ -59,7 +59,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Added the orchestrator asset&#xD;&#xA;&quot;IsBotRunning&quot; and set it to False" sap:VirtualizedContainerService.HintSize="936,1618.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Added the orchestrator asset&#xA;&quot;IsBotRunning&quot; and set it to False" sap:VirtualizedContainerService.HintSize="936,1618.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt" />
       <Variable x:TypeArguments="x:String" Name="AssetValue" />
@@ -140,9 +140,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="TestQueue">
                     <ui:AddQueueItem.ItemInformation>
-                      <InArgument x:TypeArguments="x:String" x:Key="CompanyName">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow.Item(&quot;Company Name&quot;).ToString" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="CompanyName">[CurrentRow.Item("Company Name").ToString]</InArgument>
                     </ui:AddQueueItem.ItemInformation>
                   </ui:AddQueueItem>
                 </Sequence>
@@ -155,7 +153,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEachRow>
-          <ui:StartJob ModernFolder="{x:Null}" NumberOfRobots="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Start Job" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="StartJob_1" ProcessName="Performer" />
+          <ui:StartJob ModernFolder="{x:Null}" NumberOfRobots="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Start Job" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="StartJob_1" ProcessName="AddPerformerName" />
         </Sequence>
       </If.Else>
     </If>
